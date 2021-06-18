@@ -14,7 +14,7 @@ RUN GO111MODULE=on go get \
   github.com/gogo/protobuf/protoc-gen-gogoslick@v${GOGO_PROTOBUF_VERSION} && \
   mv /go/bin/protoc-gen-go* /usr/local/bin/
 
-ENV GRPC_GATEWAY_VERSION=1.8.5
+ENV GRPC_GATEWAY_VERSION=2.4.0
 RUN curl -sSL \
   https://github.com/grpc-ecosystem/grpc-gateway/releases/download/v${GRPC_GATEWAY_VERSION}/protoc-gen-grpc-gateway-v${GRPC_GATEWAY_VERSION}-linux-x86_64 \
   -o /usr/local/bin/protoc-gen-grpc-gateway && \
@@ -88,7 +88,7 @@ COPY --from=builder /usr/local/include /usr/include
 
 ENV GOGO_PROTOBUF_VERSION=1.2.1 \
   GOLANG_PROTOBUF_VERSION=1.3.1 \
-  GRPC_GATEWAY_VERSION=1.8.5 \
+  GRPC_GATEWAY_VERSION=2.4.0 \
   GRPC_WEB_VERSION=1.0.4 \
   TWIRP_VERSION=5.7.0 \
   YARPC_VERSION=1.37.3

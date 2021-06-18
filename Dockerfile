@@ -2,6 +2,7 @@ FROM golang:1.14-alpine3.11 as builder
 
 RUN apk add --update --no-cache build-base curl git upx && \
   rm -rf /var/cache/apk/*
+  
 
 ENV GOLANG_PROTOBUF_VERSION=1.3.1 \
   GOGO_PROTOBUF_VERSION=1.2.1
